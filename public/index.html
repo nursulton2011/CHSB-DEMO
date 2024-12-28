@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Форма для входа в админ-панель -->
+    <div id="admin-login">
+        <h2>Вход в админ-панель</h2>
+        <input type="password" id="admin-password" placeholder="Введите пароль">
+        <button onclick="loginAsAdmin()">Войти</button>
+    </div>
+
+    <!-- Кнопка для перехода в админ-панель (показывается только после успешного входа) -->
+    <div id="admin-button" style="display:none;">
+        <button onclick="toggleAdminPanel()">Перейти в админ-панель</button>
+    </div>
+
+    <!-- Админ-панель -->
+    <div id="admin-panel" style="display:none;">
+        <h2>Админ-панель</h2>
+        <div id="questions-list">
+            <!-- Список вопросов будет загружен сюда -->
+        </div>
+        <button onclick="logoutAdmin()">Выйти</button>
+    </div>
+
+    <!-- Главная часть (для теста) -->
+    <div id="test-container">
+        <div id="question-container">
+            <p id="question">Загрузка вопроса...</p>
+            <div id="answers"></div>
+        </div>
+        <div class="navigation-buttons">
+            <button id="prev-button" onclick="prevQuestion()">Назад</button>
+            <button id="next-button" onclick="nextQuestion()" disabled>Вперед</button>
+        </div>
+        <div id="pagination"></div>
+        <button id="finish-button" onclick="showResults()">Завершить тест</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
